@@ -19,7 +19,7 @@ public class aliceApple {
         if (M <= S * K) {
             System.out.println(M);
         } else if (M <= S * K + W + E) {
-            System.out.println(S * K + (M - S) * K);
+            System.out.println(S * K + (M - S * K) * K);
         } else {
             System.out.println(-1);
         }
