@@ -1,6 +1,7 @@
 import java.lang.Math;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.lang.Thread;
 
 class listPrimes {
     // Using 2 loops
@@ -86,6 +87,48 @@ class listPrimes {
         return primes;
     }
 
+    public static void incrementalSeive(int max) {
+        Integer root = (int) Math.ceil(Math.sqrt(max));
+        ArrayList<Integer> primes = simpleSeive(root);
+
+        Integer low = root;
+        Integer high = 2 * root;
+        for (Integer i : primes) {
+            System.out.print(i + " ");
+        }
+
+        while (true) {
+            int length = high - low + 1;
+            boolean isPrime[] = new boolean[length];
+
+            for (Integer i = 0; i < length; i++) {
+                isPrime[i] = true;
+            }
+
+            for (Integer prime : primes) {
+                int start = (int) Math.ceil((double) low / prime) * prime;
+                for (int i = start; i <= high; i += prime) {
+                    isPrime[i - low] = false;
+                }
+            }
+
+            for (Integer i = 0; i < length; i++) {
+                if (isPrime[i]) {
+                    primes.add(i + low);
+                    System.out.print((i + low) + " ");
+                }
+            }
+            low += root;
+            high += root;
+
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        }
+    }
+
     public static void printArrayList(ArrayList<Integer> arr) {
         for (Integer i : arr) {
             System.out.print(i + " ");
@@ -100,6 +143,7 @@ class listPrimes {
         printArrayList(dualLoops(max));
         printArrayList(simpleSeive(max));
         printArrayList(segmentedSeive(max));
+        incrementalSeive(max);
         in.close();
     }
 }
