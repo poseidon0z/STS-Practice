@@ -23,12 +23,14 @@ public class lexFirstPallindrome {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        System.out.print("Enter the string: ");
         String val = in.next();
 
         int freq[] = new int[26];
 
         if (!checkIfPallindrome(val, freq)) {
             System.out.println(-1);
+            in.close();
             return;
         }
 
