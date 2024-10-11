@@ -47,5 +47,6 @@ public class lexFirstPallindrome {
         }
 
         System.out.println(start + middle + end);
+        in.close();
     }
 }
