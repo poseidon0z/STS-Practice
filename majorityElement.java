@@ -11,7 +11,6 @@ public class majorityElement {
 
         System.out.print("Enter the values: ");
         int majority = -1;
-        int max = 0;
         for (int i = 0; i < n; i++) {
             Integer temp = in.nextInt();
             counts.get(temp);
@@ -20,8 +19,8 @@ public class majorityElement {
             int total = counts.get(temp) + 1;
             counts.put(temp, total);
             if (total > n / 2) {
-                max = total;
                 majority = temp;
+                break;
             }
         }
 
