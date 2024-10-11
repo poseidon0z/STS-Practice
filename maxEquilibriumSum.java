@@ -30,5 +30,6 @@ public class maxEquilibriumSum {
 
         System.out.println(
                 "The equilibrium point is: " + equi);
+        in.close();
     }
 }

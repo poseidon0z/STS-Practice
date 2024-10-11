@@ -28,5 +28,6 @@ public class maxConsecutiveOnes {
         }
 
         System.out.println(maxOnes);
+        in.close();
     }
 }
