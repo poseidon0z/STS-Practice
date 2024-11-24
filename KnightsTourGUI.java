@@ -131,6 +131,7 @@ public class KnightsTourGUI extends JPanel {
 
         if (px < 0 || px >= N || py < 0 || py >= N) {
             System.out.println("Invalid starting coordinates. Exiting.");
+            in.close();
             return;
         }
 

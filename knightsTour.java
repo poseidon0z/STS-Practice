@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.lang.Thread;
 
 public class knightsTour {
     static int[][] actions = { { 1, 2 }, { 2, 1 }, { -1, 2 }, { -2, 1 }, { -1, -2 }, { -2, -1 }, { 1, -2 }, { 2, -1 } };

@@ -8,6 +8,7 @@ public class aliceApple {
         System.out.print("Enter the number of apples per tree: ");
         int K = in.nextInt();
         System.out.print("Enter the number of trees in north: ");
+        @SuppressWarnings("unused")
         int N = in.nextInt();
         System.out.print("Enter the number of trees in east: ");
         int E = in.nextInt();
